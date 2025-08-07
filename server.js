@@ -11,7 +11,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Pasta pública onde vão ficar os arquivos HTML, CSS, JS e imagens
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '')));
 
 // Rota padrão - serve a página inicial (ex: index.html)
 app.get('/', (req, res) => {
