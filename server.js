@@ -1,4 +1,3 @@
-// server.js
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -6,28 +5,25 @@ import { fileURLToPath } from 'url';
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Configurar caminho __dirname no ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Pasta pública onde vão ficar os arquivos HTML, CSS, JS e imagens
-app.use(express.static(path.join(__dirname, '')));
+// Serve arquivos estáticos da raiz (mesma pasta do server.js)
+app.use(express.static(__dirname));
 
-// Rota padrão - serve a página inicial (ex: index.html)
+// Rotas para as páginas
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Rotas para as outras páginas
 app.get('/pagina2', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'pagina2.html'));
+  res.sendFile(path.join(__dirname, 'pagina2.html'));
 });
 
 app.get('/pagina3', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'pagina3.html'));
+  res.sendFile(path.join(__dirname, 'pagina3.html'));
 });
 
-// Inicia o servidor
 app.listen(PORT, () => {
   console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
