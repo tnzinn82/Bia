@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+  <meta charset="UTF-8" />
+  <title>Nosso Amor❤️‍🩹</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      background: linear-gradient(135deg, #1a001a, #330033);
+      font-family: 'Montserrat', sans-serif;
+      color: #fce4f7;
+      overflow-x: hidden;
+      padding: 20px 15px 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background: linear-gradient(135deg, #330033dd, #660066dd);
+      border-radius: 20px;
+      box-shadow: 0 0 30px #ff33bbcc;
+      margin: 20px 0;
+      overflow: hidden;
+      max-width: 900px;
+      width: 100%;
+      user-select: none;
+      transition: all 0.3s ease;
+    }
+    .container:nth-of-type(even) {
+      flex-direction: row-reverse;
+      background: linear-gradient(135deg, #660066dd, #330033dd);
+    }
+    .container img {
+      width: 45%;
+      max-width: 450px;
+      height: auto;
+      object-fit: cover;
+      filter: drop-shadow(0 0 15px #ff33bb);
+      transition: transform 0.5s ease;
+      border-radius: 0 0 0 20px;
+      user-select: none;
+    }
+    .container:nth-of-type(even) img {
+      border-radius: 0 20px 20px 0;
+    }
+    .container img:hover {
+      transform: scale(1.07);
+      filter: drop-shadow(0 0 30px #ff66cc);
+      cursor: pointer;
+    }
+    .texto {
+      flex: 1;
+      padding: 30px 40px;
+      color: #ffd6e8;
+    }
+    .texto h2 {
+      font-weight: 600;
+      font-size: 2rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 8px #ff33bbcc;
+      letter-spacing: 0.05em;
+    }
+    .texto p {
+      font-weight: 300;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #ffcce1;
+      text-shadow: 0 0 6px #ff99ccaa;
+    }
+
+    /* Botão para página 3 */
+    .botao-pag3 {
+      margin-top: 40px;
+      padding: 15px 45px;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      background: linear-gradient(45deg, #ff33bb, #ff66cc);
+      color: white;
+      border: none;
+      box-shadow: 0 0 15px #ff33bb;
+      cursor: pointer;
+      transition: background 1s ease, box-shadow 1s ease;
+      user-select: none;
+      align-self: center;
+    }
+    .botao-pag3:hover {
+      background: linear-gradient(45deg, #ff66cc, #ff33bb);
+      box-shadow: 0 0 30px #ff99cc;
+    }
+
+    /* Responsivo */
+    @media (max-width: 850px) {
+      .container {
+        flex-direction: column !important;
+        border-radius: 20px;
+      }
+      .container img, .container:nth-of-type(even) img {
+        width: 100%;
+        border-radius: 20px 20px 0 0 !important;
+      }
+      .texto {
+        padding: 20px 15px;
+      }
+      .texto h2 {
+        font-size: 1.6rem;
+      }
+      .texto p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="http://eqpimp.onrender.com/uploads/1754604408782-24309638-1d8d-4c8c-b8a4-6fbaf68ecf28.jpeg" alt="foto1" />
+    <div class="texto">
+      <h2>O início de tudo</h2>
+      <p>Foi no instante em que te vi que percebi: a minha vida nunca mais seria a mesma. E eu não quero que seja.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <img src="http://eqpimp.onrender.com/uploads/1754605542734-dc8191d0-9294-45f8-b1c6-e6e8f73b144f.jpeg" alt="foto2" />
+    <div class="texto">
+      <h2>Meu porto seguro</h2>
+      <p>Quando o mundo é tempestade, você é meu abrigo. E quando é calmaria, você é o meu sol.</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <img src="http://eqpimp.onrender.com/uploads/1754604313179-5527f3c8-3af6-40d3-94bf-02b6a97db7ed.jpeg" alt="foto3" />
+    <div class="texto">
+      <h2>Pra sempre nós</h2>
+      <p>O tempo pode passar, mas meu amor só cresce. Cada dia ao seu lado é mais um capítulo da nossa história infinita.</p>
+    </div>
+  </div>
+
+  <button class="botao-pag3" onclick="window.location.href='pagina3.html'">Clica aqui, amor! ❤️‍🩹</button>
+
+</body>
+</html>

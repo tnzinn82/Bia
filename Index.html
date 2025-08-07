@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Para Você, Amor ❤️</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+    }
+    .container {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+      text-align: center;
+      z-index: 2;
+    }
+    .container h1 {
+      font-size: 2rem;
+      color: #ffccff;
+      margin-bottom: 15px;
+    }
+    .container p {
+      font-size: 1.2rem;
+      color: #eee;
+    }
+    #amorBtn {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background-color: #ff3399;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 20px #ff3399;
+      animation: mudarCor 9s infinite;
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+    @keyframes mudarCor {
+      0%   { background-color: #ff3399; box-shadow: 0 0 20px #ff3399; }
+      33%  { background-color: #ff66cc; box-shadow: 0 0 20px #ff66cc; }
+      66%  { background-color: #cc33ff; box-shadow: 0 0 20px #cc33ff; }
+      100% { background-color: #ff3399; box-shadow: 0 0 20px #ff3399; }
+    }
+    .beijo {
+      position: absolute;
+      font-size: 75px;
+      opacity: 0;
+      animation: aparecer 3s ease forwards;
+      pointer-events: none;
+    }
+    @keyframes aparecer {
+      0% { opacity: 0; transform: scale(0.5); }
+      10% { opacity: 1; transform: scale(0.75); }
+      90% { opacity: 1; }
+      100% { opacity: 0; transform: scale(0.5); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Para o amor da minha vida 💖</h1>
+    <p>
+      Você é o motivo do meu sorriso bobo, das minhas melhores manhãs e dos meus sonhos mais lindos.
+      Cada segundo contigo é poesia que meu coração escreve em silêncio. Te amo mais do que palavras podem dizer.
+    </p>
+  </div>
+
+  <button id="amorBtn">Receba Meu Amor</button>
+
+  <script>
+    // Função para criar 6 beijos na tela
+    const criarBeijos = () => {
+      for (let i = 0; i < 6; i++) {
+        const beijo = document.createElement('div');
+        beijo.classList.add('beijo');
+        beijo.innerText = '💋';
+        beijo.style.left = Math.random() * 90 + 'vw';
+        beijo.style.top = Math.random() * 90 + 'vh';
+        document.body.appendChild(beijo);
+
+        setTimeout(() => beijo.remove(), 3000);
+      }
+    };
+
+    // Criar beijos a cada 2 segundos
+    setInterval(criarBeijos, 2000);
+
+    // Redirecionar ao clicar no botão
+    document.getElementById("amorBtn").addEventListener("click", () => {
+      window.location.href = "pagina2.html";
+    });
+  </script>
+
+</body>
+</html>

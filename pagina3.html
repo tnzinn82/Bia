@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br" >
+<head>
+  <meta charset="UTF-8" />
+  <title>Te amo infinitamente 💋</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      background: linear-gradient(135deg, #1a001a, #330033);
+      font-family: 'Montserrat', sans-serif;
+      color: #fce4f7;
+      overflow-x: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+    }
+    /* Loading screen container */
+    #loading-screen {
+      position: fixed;
+      inset: 0;
+      background: #330033;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    /* Texto "Carregando todo meu amor!" piscando */
+    #loading-text {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ff66cc;
+      letter-spacing: 0.15em;
+      animation: blink 1.4s infinite;
+      text-shadow:
+        0 0 10px #ff33bb,
+        0 0 20px #ff33bb,
+        0 0 40px #ff66cc,
+        0 0 60px #ff66cc,
+        0 0 80px #ff66cc;
+      margin-bottom: 40px;
+      user-select: none;
+      text-align: center;
+    }
+    @keyframes blink {
+      0%, 100% {opacity: 1;}
+      50% {opacity: 0.3;}
+    }
+
+    /* Coracoes flutuantes */
+    .heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
+      opacity: 0.8;
+      animation: floatUp linear forwards;
+      pointer-events: none;
+      filter: drop-shadow(0 0 5px #ff33bb);
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-150px) scale(1.3);
+        opacity: 0;
+      }
+    }
+
+    /* Conteúdo principal */
+    #content {
+      opacity: 0;
+      max-width: 900px;
+      width: 100%;
+      user-select: none;
+      color: #ffd6e8;
+      font-size: 1.25rem;
+      line-height: 1.85;
+      text-align: justify;
+      background: linear-gradient(180deg, rgba(51,0,51,0.9) 0%, rgba(26,0,26,0.95) 100%);
+      border-radius: 25px;
+      box-shadow: 0 0 40px #ff77cc, inset 0 0 60px #ff33bb;
+      padding: 40px 30px;
+      margin-top: 40px;
+      transition: opacity 1.5s ease;
+      pointer-events: none;
+    }
+    body.loaded #content {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .imagem-full {
+      width: 100%;
+      height: auto;
+      border-radius: 25px 25px 0 0;
+      box-shadow: 0 8px 30px #ff33bbaa;
+      border-bottom: 5px solid #ff33bb;
+      user-select: none;
+      transition: transform 0.4s ease;
+      margin-bottom: 25px;
+    }
+    .imagem-full:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 0 15px #ff66cc);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loading-screen">
+    <div id="loading-text">Carregando todo meu amor! ❤️</div>
+  </div>
+
+  <section id="content" class="bloco-full">
+    <img class="imagem-full" src="http://eqpimp.onrender.com/uploads/1754604501437-d6397661-56c7-41ed-ac92-736ee7a7bb9e.jpeg" alt="Foto Romântica" />
+    <p>
+      Desde o momento em que você entrou na minha vida, tudo ganhou cor, sentido e propósito.
+      Cada sorriso seu ilumina meu dia, cada palavra sua acalma minha alma.
+      Você é a certeza que eu sempre procurei, o abraço que encaixa perfeitamente, o olhar que fala mais que mil frases.
+    </p>
+    <p>
+      Não importa onde eu esteja, quando penso em você, me sinto em casa.
+      O mundo pode girar, as coisas podem mudar, mas o meu amor por você é constante e cresce a cada segundo.
+      Você é a minha melhor escolha, meu destino, minha paz e minha aventura.
+    </p>
+    <p>
+      Se eu pudesse, congelaria cada momento ao seu lado, para que eles nunca acabassem.
+      Mas já que não posso, vou viver cada segundo intensamente, para que nossa história seja a mais bonita que já existiu.
+      Te amo além das palavras, além do tempo, além de tudo que já senti na vida. 💖
+    </p>
+  </section>
+
+  <script>
+    // Função pra criar corações aleatórios e animar
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+
+      // Posição aleatória horizontal
+      heart.style.left = Math.random() * 100 + 'vw';
+      // Posição vertical inicial perto da base da tela (ex: 90-100vh)
+      heart.style.top = (window.innerHeight + 30) + 'px';
+
+      // Duração aleatória entre 4 e 7 segundos
+      const duration = (4 + Math.random() * 3).toFixed(2);
+      heart.style.animationDuration = duration + 's';
+
+      document.body.appendChild(heart);
+
+      // Remove o coração depois da animação
+      setTimeout(() => {
+        heart.remove();
+      }, duration * 1000);
+    }
+
+    // Cria vários corações iniciais
+    for(let i=0; i<10; i++) {
+      setTimeout(createHeart, i * 500);
+    }
+
+    // Cria corações continuamente enquanto carregar
+    const heartInterval = setInterval(createHeart, 700);
+
+    // Depois de 7 segundos, some loading e mostra conteúdo
+    setTimeout(() => {
+      clearInterval(heartInterval);
+      const loadingScreen = document.getElementById('loading-screen');
+      loadingScreen.style.transition = 'opacity 1s ease';
+      loadingScreen.style.opacity = 0;
+      setTimeout(() => loadingScreen.style.display = 'none', 1000);
+
+      document.body.classList.add('loaded');
+    }, 7000);
+  </script>
+
+</body>
+</html>
